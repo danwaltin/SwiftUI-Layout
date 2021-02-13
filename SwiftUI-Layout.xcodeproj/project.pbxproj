@@ -11,6 +11,9 @@
 		3741B73825D7B0A4009B33D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741B73725D7B0A4009B33D4 /* ContentView.swift */; };
 		3741B73A25D7B0A7009B33D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3741B73925D7B0A7009B33D4 /* Assets.xcassets */; };
 		3741B73D25D7B0A7009B33D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3741B73C25D7B0A7009B33D4 /* Preview Assets.xcassets */; };
+		3741B74B25D7B4BB009B33D4 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741B74A25D7B4BB009B33D4 /* CharacterView.swift */; };
+		3741B74F25D7B5D2009B33D4 /* SidebarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741B74E25D7B5D2009B33D4 /* SidebarItemView.swift */; };
+		3741B75325D7B667009B33D4 /* SidebarSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741B75225D7B667009B33D4 /* SidebarSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		3741B73C25D7B0A7009B33D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3741B73E25D7B0A7009B33D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3741B73F25D7B0A7009B33D4 /* SwiftUI_Layout.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUI_Layout.entitlements; sourceTree = "<group>"; };
+		3741B74A25D7B4BB009B33D4 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		3741B74E25D7B5D2009B33D4 /* SidebarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItemView.swift; sourceTree = "<group>"; };
+		3741B75225D7B667009B33D4 /* SidebarSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,9 @@
 			children = (
 				3741B73525D7B0A4009B33D4 /* SwiftUI_LayoutApp.swift */,
 				3741B73725D7B0A4009B33D4 /* ContentView.swift */,
+				3741B74A25D7B4BB009B33D4 /* CharacterView.swift */,
+				3741B75225D7B667009B33D4 /* SidebarSectionView.swift */,
+				3741B74E25D7B5D2009B33D4 /* SidebarItemView.swift */,
 				3741B73925D7B0A7009B33D4 /* Assets.xcassets */,
 				3741B73E25D7B0A7009B33D4 /* Info.plist */,
 				3741B73F25D7B0A7009B33D4 /* SwiftUI_Layout.entitlements */,
@@ -140,6 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3741B74F25D7B5D2009B33D4 /* SidebarItemView.swift in Sources */,
+				3741B74B25D7B4BB009B33D4 /* CharacterView.swift in Sources */,
+				3741B75325D7B667009B33D4 /* SidebarSectionView.swift in Sources */,
 				3741B73825D7B0A4009B33D4 /* ContentView.swift in Sources */,
 				3741B73625D7B0A4009B33D4 /* SwiftUI_LayoutApp.swift in Sources */,
 			);

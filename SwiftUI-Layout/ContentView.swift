@@ -12,6 +12,11 @@ struct Character : Identifiable {
 	let name: String
 }
 
+struct CharacterGroup {
+	let title: String
+	let characters: [Character]
+}
+
 let litterature = [
 	Character(name: "Ronja Rövardotter"),
 	Character(name: "Pippi Långstrump")
@@ -24,36 +29,20 @@ let science = [
 	Character(name: "Marie Curie")
 ]
 
+let litteratureGroup = CharacterGroup(
+	title: "Litterature",
+	characters: litterature)
+
+let scienceGroup = CharacterGroup(
+	title: "Science",
+	characters: science)
+
 struct ContentView: View {
     var body: some View {
 		NavigationView {
 			List {
-				Section(
-					header: Text("Litterature"),
-					content: {
-						ForEach(litterature) {character in
-							NavigationLink(
-								destination: Text(character.name),
-								label: {
-									Text(character.name)
-										.fixedSize()
-								}
-							)
-						}
-					})
-				Section(
-					header: Text("Science"),
-					content: {
-						ForEach(science) {character in
-							NavigationLink(
-								destination: Text(character.name),
-								label: {
-									Text(character.name)
-										.fixedSize()
-								}
-							)
-						}
-					})
+				SidebarSectionView(characterGroup: litteratureGroup)
+				SidebarSectionView(characterGroup: scienceGroup)
 			}
 			.listStyle(SidebarListStyle())
 
