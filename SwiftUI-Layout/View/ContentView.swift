@@ -18,6 +18,8 @@ struct ContentView: View {
 				}
 			}
 			.listStyle(SidebarListStyle())
+			
+			NoCharacterSelectedView()
 		}
 		.toolbar {
 			Toolbar()

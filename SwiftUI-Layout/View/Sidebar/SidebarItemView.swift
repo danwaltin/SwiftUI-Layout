@@ -12,7 +12,7 @@ struct SidebarItemView: View {
 
 	var body: some View {
 		NavigationLink(
-			destination: CharacterView(character: character),
+			destination: CharacterDetailView(character: character),
 			label: {
 				Text(character.name).fixedSize()
 			}

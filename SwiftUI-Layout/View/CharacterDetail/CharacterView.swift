@@ -1,5 +1,5 @@
 //
-//  CharacterView.swift
+//  CharacterDetailView.swift
 //  SwiftUI-Layout
 //
 //  Created by Dan Waltin on 2021-02-13.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CharacterView: View {
+struct CharacterDetailView: View {
 	let character: Character
 	
     var body: some View {
@@ -16,8 +16,8 @@ struct CharacterView: View {
     }
 }
 
-struct CharacterView_Previews: PreviewProvider {
+struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
-		CharacterView(character: litterature[0])
+		CharacterDetailView(character: litterature[0])
     }
 }
