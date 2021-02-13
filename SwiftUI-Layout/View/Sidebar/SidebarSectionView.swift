@@ -14,15 +14,16 @@ struct SidebarSectionView: View {
 		Section(
 			header: Text(characterGroup.title),
 			content: {
-				ForEach(characterGroup.characters) {character in
-					SidebarItemView(character: character)
+				ForEach(characterGroup.characters) {
+					SidebarItemView(character: $0)
 				}
-			})
+			}
+		)
     }
 }
 
 struct SidebarSectionView_Previews: PreviewProvider {
     static var previews: some View {
-		SidebarSectionView(characterGroup: CharacterGroup(title: "", characters: []))
+		SidebarSectionView(characterGroup: litteratureGroup)
     }
 }
