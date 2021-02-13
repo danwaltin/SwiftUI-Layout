@@ -9,13 +9,15 @@ import Foundation
 
 let litterature = [
 	Character(name: "Ronja Rövardotter"),
-	Character(name: "Pippi Långstrump")
+	Character(name: "Pippi Långstrump"),
+	Character(name: "Virginia Woolf")
 ]
 
 let science = [
 	Character(name: "Ada Lovelace"),
 	Character(name: "Alan Turing"),
 	Character(name: "Albert Einstein"),
+	Character(name: "Grace Hopper"),
 	Character(name: "Marie Curie")
 ]
 
