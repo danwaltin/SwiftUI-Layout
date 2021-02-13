@@ -30,3 +30,13 @@ let scienceGroup = CharacterGroup(
 	characters: science)
 
 let allGroups = [litteratureGroup, scienceGroup]
+
+let allTools = [
+	Tool(name: "Knife"),
+	Tool(name: "Bow"),
+	Tool(name: "Computer"),
+	Tool(name: "Pen"),
+	Tool(name: "Paper"),
+	Tool(name: "Uranium"),
+	Tool(name: "Golden coins")
+]

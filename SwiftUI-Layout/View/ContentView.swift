@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 	let groups: [CharacterGroup]
+	let tools: [Tool]
 	
 	var body: some View {
 		NavigationView {
@@ -20,6 +21,8 @@ struct ContentView: View {
 			.listStyle(SidebarListStyle())
 			
 			NoCharacterSelectedView()
+			
+			ToolsView(tools: tools)
 		}
 		.toolbar {
 			Toolbar()
@@ -29,6 +32,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(groups: allGroups)
+		ContentView(groups: allGroups, tools: allTools)
     }
 }
