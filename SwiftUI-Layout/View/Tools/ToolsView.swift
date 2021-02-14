@@ -12,13 +12,11 @@ struct ToolsView: View {
 	
     var body: some View {
 		List {
-			Text("Tools")
 			ForEach(tools) {
 				Text($0.name)
 			}
 		}
 		.listStyle(SidebarListStyle())
-
     }
 }
 

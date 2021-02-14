@@ -13,7 +13,10 @@ struct CharacterDetailView: View {
     var body: some View {
 		Text(character.name)
 			.navigationTitle(character.name)
-    }
+			.toolbar {
+				CharacterToolbar()
+			}
+	}
 }
 
 struct CharacterDetailView_Previews: PreviewProvider {

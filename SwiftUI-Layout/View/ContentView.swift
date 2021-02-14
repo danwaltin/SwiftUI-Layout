@@ -19,13 +19,16 @@ struct ContentView: View {
 				}
 			}
 			.listStyle(SidebarListStyle())
+			.toolbar{
+				SidebarToolbar()
+			}
 			
 			NoCharacterSelectedView()
-			
+				.toolbar {
+					CharacterToolbar()
+			   }
+
 			ToolsView(tools: tools)
-		}
-		.toolbar {
-			Toolbar()
 		}
     }
 }
