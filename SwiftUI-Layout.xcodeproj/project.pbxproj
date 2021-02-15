@@ -21,6 +21,7 @@
 		3753D5FD25D819C600F36FD9 /* NoCharacterSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753D5FC25D819C600F36FD9 /* NoCharacterSelectedView.swift */; };
 		3753D60125D822E300F36FD9 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753D60025D822E300F36FD9 /* ToolsView.swift */; };
 		3753D60425D8230000F36FD9 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753D60325D8230000F36FD9 /* Tool.swift */; };
+		3753D60725D90E1D00F36FD9 /* DisplayedAreas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753D60625D90E1D00F36FD9 /* DisplayedAreas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		3753D5FC25D819C600F36FD9 /* NoCharacterSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCharacterSelectedView.swift; sourceTree = "<group>"; };
 		3753D60025D822E300F36FD9 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
 		3753D60325D8230000F36FD9 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		3753D60625D90E1D00F36FD9 /* DisplayedAreas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedAreas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				3741B76125D81749009B33D4 /* Sidebar */,
 				3741B73725D7B0A4009B33D4 /* ContentView.swift */,
 				3753D5F725D8183000F36FD9 /* Toolbar.swift */,
+				3753D60625D90E1D00F36FD9 /* DisplayedAreas.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				3753D5F825D8183000F36FD9 /* Toolbar.swift in Sources */,
 				3741B74F25D7B5D2009B33D4 /* SidebarItemView.swift in Sources */,
 				3753D60125D822E300F36FD9 /* ToolsView.swift in Sources */,
+				3753D60725D90E1D00F36FD9 /* DisplayedAreas.swift in Sources */,
 				3753D60425D8230000F36FD9 /* Tool.swift in Sources */,
 				3741B75C25D8160B009B33D4 /* CharacterGroup.swift in Sources */,
 				3741B74B25D7B4BB009B33D4 /* CharacterView.swift in Sources */,
