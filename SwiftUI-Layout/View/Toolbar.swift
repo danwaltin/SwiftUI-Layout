@@ -19,12 +19,10 @@ struct SidebarToolbar: ToolbarContent {
 }
 
 struct CharacterToolbar: ToolbarContent {
-	@Binding var displayedAreas: DisplayedAreas
-	
 	var body: some ToolbarContent {
 		ToolbarItem {
 			Button(action: {
-				print("*** Clicked toggle tools button. displayedAreas.displayToolsArea: \(displayedAreas.displayToolsArea)")
+				print("*** Clicked toggle tools button.")
 			}){
 				Image(systemName: "sidebar.right")
 			}
