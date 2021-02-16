@@ -11,6 +11,8 @@ struct ContentView: View {
 	let groups: [CharacterGroup]
 	let tools: [Tool]
 	
+	@StateObject var displayedAreas = DisplayedAreas()
+	
 	var body: some View {
 		NavigationView {
 			List {
@@ -23,13 +25,30 @@ struct ContentView: View {
 				SidebarToolbar()
 			}
 			
-			NoCharacterSelectedView()
-				.toolbar {
-					CharacterToolbar()
-			   }
-
-			ToolsView(tools: tools)
+			GeometryReader { geometry in
+						HSplitView {
+							VStack {
+								GeometryReader { g in
+									NoCharacterSelectedView()
+										.frame(height: geometry.size.height)
+								}
+							}
+							VStack {
+								GeometryReader { g in
+									if displayedAreas.displayToolsArea {
+										ToolsView(tools: tools)
+											.frame(height: geometry.size.height)
+									} else {
+										ToolsView(tools: tools)
+											.frame(width: 0, height: geometry.size.height)
+									}
+								}
+							}
+						}
+						.frame(width: geometry.size.width, height: geometry.size.height)
+			}
 		}
+		.environmentObject(displayedAreas)
     }
 }
 

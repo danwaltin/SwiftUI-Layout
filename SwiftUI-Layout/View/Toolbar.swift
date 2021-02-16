@@ -21,12 +21,20 @@ struct SidebarToolbar: ToolbarContent {
 struct CharacterToolbar: ToolbarContent {
 	var body: some ToolbarContent {
 		ToolbarItem {
-			Button(action: {
-				print("*** Clicked toggle tools button.")
-			}){
-				Image(systemName: "sidebar.right")
-			}
-			.help("Hide or show the tools")
+			ToggleToolsButton()
 		}
+	}
+}
+
+struct ToggleToolsButton : View {
+	@EnvironmentObject var displayedAreas: DisplayedAreas
+
+	var body: some View {
+		Button(action: {
+			displayedAreas.displayToolsArea.toggle()
+		}){
+			Image(systemName: "sidebar.right")
+		}
+		.help("Hide or show the tools")
 	}
 }

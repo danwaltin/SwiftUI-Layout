@@ -10,6 +10,9 @@ import SwiftUI
 struct NoCharacterSelectedView: View {
     var body: some View {
         Text("Select a character in the list")
+			.toolbar {
+				CharacterToolbar()
+			}
     }
 }
 

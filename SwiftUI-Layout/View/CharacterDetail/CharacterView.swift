@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CharacterDetailView: View {
 	let character: Character
-	
-    var body: some View {
+
+	var body: some View {
 		Text(character.name)
 			.navigationTitle(character.name)
 			.toolbar {

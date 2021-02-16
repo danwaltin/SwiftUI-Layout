@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ToolsView: View {
+	@EnvironmentObject var displayedAreas: DisplayedAreas
+
 	let tools: [Tool]
 	
     var body: some View {
@@ -16,7 +18,6 @@ struct ToolsView: View {
 				Text($0.name)
 			}
 		}
-		.listStyle(SidebarListStyle())
     }
 }
 
