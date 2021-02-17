@@ -9,10 +9,10 @@ import SwiftUI
 
 struct SidebarItemView: View {
 	let character: Character
-
+	let tools: [Tool]
 	var body: some View {
 		NavigationLink(
-			destination: CharacterDetailView(character: character),
+			destination: CharacterDetailView(character: character, tools: tools),
 			label: {
 				Text(character.name).fixedSize()
 			}
@@ -22,6 +22,6 @@ struct SidebarItemView: View {
 
 struct SidebarItemView_Previews: PreviewProvider {
     static var previews: some View {
-		SidebarItemView(character: litterature[0])
+		SidebarItemView(character: litterature[0], tools: allTools)
     }
 }

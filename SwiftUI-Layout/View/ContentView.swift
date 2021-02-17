@@ -20,7 +20,7 @@ struct ContentView: View {
 		NavigationView {
 			List {
 				ForEach(groups) {
-					SidebarSectionView(characterGroup: $0)
+					SidebarSectionView(characterGroup: $0, tools: tools)
 				}
 			}
 			.listStyle(SidebarListStyle())
@@ -28,25 +28,9 @@ struct ContentView: View {
 				SidebarToolbar()
 			}
 			
-			VStack {
-				HSplitView {
-					GeometryReader { g in
-						NoCharacterSelectedView()
-					}
-					.border(Color.green, width: 1)
-					.bindGeometry(to: $contentWidth) {$0.size.width}
-
-					GeometryReader { g in
-						ToolsView(tools: tools)
-					}
-					.border(Color.blue, width: 1)
-					.bindGeometry(to: $toolsWidth) {$0.size.width}
-				}
-				HStack {
-					Text("Debug info: contentWidth: \(contentWidth), toolsWidth: \(toolsWidth)")
-					Spacer()
-				}
-			}
+			DWSplitView(
+				left: NoCharacterSelectedView(),
+				right: ToolsView(tools: tools))
 		}
 		.environmentObject(displayedAreas)
 	}
