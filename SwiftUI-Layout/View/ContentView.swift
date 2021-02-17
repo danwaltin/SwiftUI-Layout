@@ -13,6 +13,9 @@ struct ContentView: View {
 	
 	@StateObject var displayedAreas = DisplayedAreas()
 	
+	@State var contentWidth: CGFloat = 0
+	@State var toolsWidth: CGFloat = 0
+	
 	var body: some View {
 		NavigationView {
 			List {
@@ -25,35 +28,32 @@ struct ContentView: View {
 				SidebarToolbar()
 			}
 			
-			GeometryReader { geometry in
-						HSplitView {
-							VStack {
-								GeometryReader { g in
-									NoCharacterSelectedView()
-										.frame(height: geometry.size.height)
-								}
-							}
-							VStack {
-								GeometryReader { g in
-									if displayedAreas.displayToolsArea {
-										ToolsView(tools: tools)
-											.frame(height: geometry.size.height)
-									} else {
-										ToolsView(tools: tools)
-											.frame(width: 0, height: geometry.size.height)
-									}
-								}
-							}
-						}
-						.frame(width: geometry.size.width, height: geometry.size.height)
+			VStack {
+				HSplitView {
+					GeometryReader { g in
+						NoCharacterSelectedView()
+					}
+					.border(Color.green, width: 1)
+					.bindGeometry(to: $contentWidth) {$0.size.width}
+
+					GeometryReader { g in
+						ToolsView(tools: tools)
+					}
+					.border(Color.blue, width: 1)
+					.bindGeometry(to: $toolsWidth) {$0.size.width}
+				}
+				HStack {
+					Text("Debug info: contentWidth: \(contentWidth), toolsWidth: \(toolsWidth)")
+					Spacer()
+				}
 			}
 		}
 		.environmentObject(displayedAreas)
-    }
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		ContentView(groups: allGroups, tools: allTools)
-    }
+	}
 }

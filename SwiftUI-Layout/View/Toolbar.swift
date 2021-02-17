@@ -31,7 +31,9 @@ struct ToggleToolsButton : View {
 
 	var body: some View {
 		Button(action: {
-			displayedAreas.displayToolsArea.toggle()
+			withAnimation {
+				displayedAreas.displayToolsArea.toggle()
+			}
 		}){
 			Image(systemName: "sidebar.right")
 		}
