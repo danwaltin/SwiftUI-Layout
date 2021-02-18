@@ -14,7 +14,7 @@ struct ContentView: View {
 	@StateObject var displayedAreas = DisplayedAreas()
 	
 	@State var contentWidth: CGFloat = 0
-	@State var toolsWidth: CGFloat = 0
+	@State var toolsWidth: CGFloat = 300
 	
 	var body: some View {
 		NavigationView {
@@ -28,9 +28,7 @@ struct ContentView: View {
 				SidebarToolbar()
 			}
 			
-			DWSplitView(
-				left: NoCharacterSelectedView(),
-				right: ToolsView(tools: tools))
+			NoCharacterSelectedView(tools: tools)
 		}
 		.environmentObject(displayedAreas)
 	}

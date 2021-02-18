@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct DWSplitView<VLeft, VRight>: NSViewControllerRepresentable where VLeft:View, VRight: View {
+	@EnvironmentObject var displayedAreas: DisplayedAreas
+
 	let left: VLeft
 	let right: VRight
+	let rightWidth: CGFloat
 	
 	func makeNSViewController(context: Context) -> NSViewController {
 		let controller = SplitViewController(
 			left: GeometryReader { g in left}.border(Color.green, width: 1),
-			right: GeometryReader { g in right}.border(Color.blue, width: 1))
+			right: GeometryReader { g in right}.border(Color.blue, width: 1),
+			rightWidth: rightWidth)
 
 		return controller
 	}
@@ -26,7 +30,7 @@ struct DWSplitView<VLeft, VRight>: NSViewControllerRepresentable where VLeft:Vie
 
 struct DWSplitView_Previews: PreviewProvider {
     static var previews: some View {
-		DWSplitView(left: PaneView(text: "sidebar"), right: PaneView(text: "main content"))
+		DWSplitView(left: PaneView(text: "sidebar"), right: PaneView(text: "main content"), rightWidth: 50)
     }
 }
 
@@ -45,21 +49,29 @@ struct PaneView: View {
 class SplitViewController<VLeft, VRight>: NSSplitViewController where VLeft:View, VRight: View {
 	var left : NSHostingController<VLeft>
 	var right : NSHostingController<VRight>
-
-	init(left: VLeft, right: VRight) {
+	var rightWidth: CGFloat
+	
+	init(left: VLeft, right: VRight, rightWidth: CGFloat) {
 		self.left = NSHostingController(rootView: left)
 		self.right = NSHostingController(rootView: right)
-
+		self.rightWidth = rightWidth
+		
 		super.init(nibName: nil, bundle: nil)
 	}
 	
 	required init?(coder: NSCoder) {
 		left = NSHostingController(rootView: EmptyView() as! VLeft)
 		right = NSHostingController(rootView: EmptyView() as! VRight)
+		self.rightWidth = 30
 		super.init(coder: coder)
 	}
 	
 	private let autoSaveName = "com.waltin.autoSaveName:splitViewController"
+	
+	override func viewDidAppear() {
+		let dividerPosition = splitView.frame.width - rightWidth
+		splitView.setPosition(dividerPosition, ofDividerAt: 0)
+	}
 	
 	override func viewDidLoad() {
 		splitView.isVertical = true
@@ -77,5 +89,7 @@ class SplitViewController<VLeft, VRight>: NSSplitViewController where VLeft:View
 
 		let mainItem = NSSplitViewItem(viewController: right)
 		addSplitViewItem(mainItem)
+		
+
 	}
 }

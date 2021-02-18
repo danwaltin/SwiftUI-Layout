@@ -11,14 +11,27 @@ struct CharacterDetailView: View {
 	let character: Character
 	let tools: [Tool]
 	
+	@State var contentWidth: CGFloat = 0
+	@State var toolsWidth: CGFloat = 300
+
 	var body: some View {
-		DWSplitView(
-			left: Text(character.name)
-				.navigationTitle(character.name)
-			 .toolbar {
-				 CharacterToolbar()
-			 },
-			right: ToolsView(tools: tools))
+		VStack {
+			DWSplitView(
+				left:
+					GeometryReader { _ in
+						Text(character.name)
+					}
+					.navigationTitle(character.name)
+					.bindGeometry(to: $contentWidth) {$0.size.width}
+					.toolbar {
+						CharacterToolbar()
+					},
+				right:
+					ToolsView(tools: tools)
+					.bindGeometry(to: $toolsWidth) { $0.size.width},
+				rightWidth: toolsWidth)
+			Text("DebugInfo: contentWidth: \(contentWidth) | toolsWidth: \(toolsWidth)")
+		}
 	}
 }
 
