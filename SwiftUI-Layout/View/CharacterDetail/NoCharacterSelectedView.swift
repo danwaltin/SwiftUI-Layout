@@ -15,23 +15,11 @@ struct NoCharacterSelectedView: View {
 	@State var toolsWidth: CGFloat = 300
 
 	var body: some View {
-		VStack {
-			DWSplitView(
-				left:
-					GeometryReader { _ in
-						Text("Select a character in the list")
-					}
-					
-					.bindGeometry(to: $contentWidth) {$0.size.width}
-					.toolbar {
-						CharacterToolbar()
-					},
-				right:
-					ToolsView(tools: tools)
-					.bindGeometry(to: $toolsWidth) { $0.size.width},
-				rightWidth: toolsWidth)
-			Text("DebugInfo: contentWidth: \(contentWidth) | toolsWidth: \(toolsWidth)")
-		}
+		CharacterDetailWithTools(
+			characterView:
+				Text("Select a character in the list"),
+			tools: tools
+		)
     }
 }
 

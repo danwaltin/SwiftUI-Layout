@@ -16,8 +16,8 @@ struct DWSplitView<VLeft, VRight>: NSViewControllerRepresentable where VLeft:Vie
 	
 	func makeNSViewController(context: Context) -> NSViewController {
 		let controller = SplitViewController(
-			left: GeometryReader { g in left}.border(Color.green, width: 1),
-			right: GeometryReader { g in right}.border(Color.blue, width: 1),
+			left: GeometryReader { g in left},
+			right: GeometryReader { g in right},
 			rightWidth: rightWidth)
 
 		return controller
@@ -30,7 +30,7 @@ struct DWSplitView<VLeft, VRight>: NSViewControllerRepresentable where VLeft:Vie
 
 struct DWSplitView_Previews: PreviewProvider {
     static var previews: some View {
-		DWSplitView(left: PaneView(text: "sidebar"), right: PaneView(text: "main content"), rightWidth: 50)
+		DWSplitView(left: PaneView(text: "sidebar"), right: PaneView(text: "main content"), rightWidth: 150)
     }
 }
 
@@ -70,7 +70,7 @@ class SplitViewController<VLeft, VRight>: NSSplitViewController where VLeft:View
 	
 	override func viewDidAppear() {
 		let dividerPosition = splitView.frame.width - rightWidth
-		splitView.setPosition(dividerPosition, ofDividerAt: 0)
+		splitView.setPosition(rightWidth, ofDividerAt: 0)
 	}
 	
 	override func viewDidLoad() {
@@ -79,8 +79,8 @@ class SplitViewController<VLeft, VRight>: NSSplitViewController where VLeft:View
 		splitView.autosaveName = NSSplitView.AutosaveName(autoSaveName)
 		splitView.identifier = NSUserInterfaceItemIdentifier(rawValue: autoSaveName)
 
-		left.view.widthAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
-		right.view.widthAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
+		left.view.widthAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
+		right.view.widthAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
 
 		let sidebarItem = NSSplitViewItem(viewController: left)
 		sidebarItem.canCollapse = false
@@ -89,7 +89,5 @@ class SplitViewController<VLeft, VRight>: NSSplitViewController where VLeft:View
 
 		let mainItem = NSSplitViewItem(viewController: right)
 		addSplitViewItem(mainItem)
-		
-
 	}
 }
