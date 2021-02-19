@@ -14,15 +14,15 @@ struct CharacterDetailView: View {
 	let tools: [Tool]
 	
 	var body: some View {
-		HSplitView {
+		HStack {
 			GeometryReader { _ in
 				Text(character.name)
 					.navigationTitle(character.name)
 			}
+			.frame(minWidth: 100)
 			
-			if displayedAreas.displayToolsArea {
-				ToolsView(tools: tools)
-			}
+			ToolsView(tools: tools)
+				.frame(width: displayedAreas.displayToolsArea ? displayedAreas.toolsAreaWidth : 0)
 		}
 		.toolbar {
 			CharacterToolbar()
@@ -34,5 +34,6 @@ struct CharacterDetailView: View {
 struct CharacterDetailView_Previews: PreviewProvider {
 	static var previews: some View {
 		CharacterDetailView(character: litterature[0], tools: allTools)
+			.environmentObject(DisplayedAreas())
 	}
 }
