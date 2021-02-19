@@ -23,7 +23,6 @@
 		3753D60425D8230000F36FD9 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753D60325D8230000F36FD9 /* Tool.swift */; };
 		3753D60725D90E1D00F36FD9 /* DisplayedAreas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753D60625D90E1D00F36FD9 /* DisplayedAreas.swift */; };
 		3753D60A25DCF74F00F36FD9 /* GeometryReaderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753D60925DCF74F00F36FD9 /* GeometryReaderExtensions.swift */; };
-		3753D60D25DD9EA200F36FD9 /* DWSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753D60C25DD9EA200F36FD9 /* DWSplitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +45,6 @@
 		3753D60325D8230000F36FD9 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		3753D60625D90E1D00F36FD9 /* DisplayedAreas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedAreas.swift; sourceTree = "<group>"; };
 		3753D60925DCF74F00F36FD9 /* GeometryReaderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderExtensions.swift; sourceTree = "<group>"; };
-		3753D60C25DD9EA200F36FD9 /* DWSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DWSplitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +117,6 @@
 				3753D5F725D8183000F36FD9 /* Toolbar.swift */,
 				3753D60625D90E1D00F36FD9 /* DisplayedAreas.swift */,
 				3753D60925DCF74F00F36FD9 /* GeometryReaderExtensions.swift */,
-				3753D60C25DD9EA200F36FD9 /* DWSplitView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,7 +216,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3753D60D25DD9EA200F36FD9 /* DWSplitView.swift in Sources */,
 				3753D5F825D8183000F36FD9 /* Toolbar.swift in Sources */,
 				3741B74F25D7B5D2009B33D4 /* SidebarItemView.swift in Sources */,
 				3753D60125D822E300F36FD9 /* ToolsView.swift in Sources */,

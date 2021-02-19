@@ -11,7 +11,7 @@ struct SidebarItemView: View {
 	let character: Character
 	let tools: [Tool]
 	var body: some View {
-		NavigationLink(
+			NavigationLink(
 			destination: CharacterDetailView(character: character, tools: tools),
 			label: {
 				Text(character.name).fixedSize()

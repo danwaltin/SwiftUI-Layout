@@ -9,5 +9,5 @@ import Foundation
 
 class DisplayedAreas: ObservableObject {
 	@Published var displayToolsArea = true
-	@Published var toolsAreaWidth: CGFloat = 100
+	@Published var toolsAreaWidth: CGFloat = 300
 }

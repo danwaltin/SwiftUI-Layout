@@ -28,7 +28,7 @@ struct ContentView: View {
 				SidebarToolbar()
 			}
 			
-			NoCharacterSelectedView(tools: tools)
+			NoCharacterSelectedView()
 		}
 		.environmentObject(displayedAreas)
 	}

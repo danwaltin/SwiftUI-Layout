@@ -7,46 +7,27 @@
 
 import SwiftUI
 
-struct CharacterDetailWithTools<V>: View where V:View {
-	let characterView: V
-	let tools: [Tool]
-	
-	@State var contentWidth: CGFloat = 0
-	@State var toolsWidth: CGFloat = 300
-	
-	var body: some View {
-		//VStack {
-			DWSplitView(
-				left:
-					GeometryReader { _ in
-						characterView
-					}
-					.bindGeometry(to: $contentWidth) {$0.size.width}
-					.toolbar {
-						CharacterToolbar()
-					},
-				right:
-					ToolsView(tools: tools)
-					.bindGeometry(to: $toolsWidth) { $0.size.width},
-				rightWidth: toolsWidth)
-		//	Text("DebugInfo: contentWidth: \(contentWidth) | toolsWidth: //\(toolsWidth)")
-		//}
-	}
-}
 struct CharacterDetailView: View {
+	@EnvironmentObject var displayedAreas: DisplayedAreas
+	
 	let character: Character
 	let tools: [Tool]
 	
-	@State var contentWidth: CGFloat = 0
-	@State var toolsWidth: CGFloat = 200
-	
 	var body: some View {
-		CharacterDetailWithTools(
-			characterView:
+		HSplitView {
+			GeometryReader { _ in
 				Text(character.name)
-				.navigationTitle(character.name),
-			tools: tools
-		)
+					.navigationTitle(character.name)
+			}
+			
+			if displayedAreas.displayToolsArea {
+				ToolsView(tools: tools)
+			}
+		}
+		.toolbar {
+			CharacterToolbar()
+		}
+		
 	}
 }
 
