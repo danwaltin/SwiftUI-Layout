@@ -12,10 +12,7 @@ struct ContentView: View {
 	let tools: [Tool]
 	
 	@StateObject var displayedAreas = DisplayedAreas()
-	
-	@State var contentWidth: CGFloat = 0
-	@State var toolsWidth: CGFloat = 300
-	
+
 	var body: some View {
 		NavigationView {
 			List {

@@ -27,7 +27,6 @@ struct CharacterDetailView: View {
 		.toolbar {
 			CharacterToolbar()
 		}
-		
 	}
 }
 

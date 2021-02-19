@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct SwiftUI_LayoutApp: App {
-    var body: some Scene {
-        WindowGroup {
+	var body: some Scene {
+		WindowGroup {
 			ContentView(groups: allGroups, tools: allTools)
-        }
-    }
+		}
+	}
 }
